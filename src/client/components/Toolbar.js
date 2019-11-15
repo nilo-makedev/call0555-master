@@ -33,7 +33,9 @@ export default class Toolbar extends React.PureComponent {
     }
   }
   handleHangoutClick = () => {
-    window.location.href = '/'
+    // window.location.href = '/'
+    //window.close()
+    this.props.onEndCall()
   }
   render () {
     const { messages, stream } = this.props
