@@ -87,6 +87,7 @@ export default class App extends React.PureComponent {
     }else{
       window.close()
     }
+    window.close()
   }
   componentDidMount () {
     let myToken = localStorage.getItem('my_token');
@@ -146,6 +147,7 @@ export default class App extends React.PureComponent {
     } = this.props
     //console.log(this.state, this.props)
     const { videos } = this.state
+    console.log(this.state, 'state')
     //console.log(active, constants.ME, window.Echo)
     return (
       <div className="app">
