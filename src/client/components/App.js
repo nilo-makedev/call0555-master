@@ -119,7 +119,7 @@ export default class App extends React.PureComponent {
       })
       .leaving(user => {
           console.log(user, "LEAVE");
-          this.setState({viewers: viewers.filter(v=>v.id!==user.id)})
+          this.setState({viewers: this.state.viewers.filter(v=>v.id!==user.id)})
       });
     }
     //window.addEventListener("beforeunload", this.onUnload)
