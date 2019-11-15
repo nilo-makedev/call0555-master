@@ -64,10 +64,10 @@ export default class App extends React.PureComponent {
   
   
   handleEndCall = () => {
-    if (viewers.length && viewers.length === 1){
+    if (this.state.viewers.length && this.state.viewers.length === 1){
       let data = {
         "message_id": $_GET('mid'),
-        "user_ids": this.state.viewers.map(v=>v.id)
+        "user_ids": this.state.participants.map(v=>v.id)
       }
       let myToken = localStorage.getItem('my_token');
       axios({
@@ -87,7 +87,6 @@ export default class App extends React.PureComponent {
     }else{
       window.close()
     }
-    window.close()
   }
   componentDidMount () {
     let myToken = localStorage.getItem('my_token');
