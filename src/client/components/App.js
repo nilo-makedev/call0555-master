@@ -7,6 +7,7 @@ import React from 'react'
 import Toolbar from './Toolbar.js'
 import Video, { StreamPropType } from './Video.js'
 import _ from 'underscore'
+import socket from '../socket.js'
 
 export default class App extends React.PureComponent {
   static propTypes = {
@@ -44,9 +45,20 @@ export default class App extends React.PureComponent {
       ? this.handleHideChat()
       : this.handleShowChat()
   }
+  onUnload(event) { // the method that will be used for both add and remove event
+    //console.log("hellooww")
+    //alert('hello')
+    event.returnValue = "Hellooww"
+  }
   componentDidMount () {
+    //window.addEventListener("beforeunload", this.onUnload)
     const { init } = this.props
     init()
+  }
+  componentWillUnmount(){
+    console.log('unmounted')
+    //window.removeEventListener("beforeunload", this.onUnload)
+    //alert('unmount')
   }
   render () {
     const {
@@ -61,7 +73,7 @@ export default class App extends React.PureComponent {
       toggleActive,
       streams
     } = this.props
-
+    //console.log(this.state, this.props)
     const { videos } = this.state
 
     return (
