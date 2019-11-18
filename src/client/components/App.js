@@ -70,9 +70,10 @@ export default class App extends React.PureComponent {
         "user_ids": this.state.participants.map(v=>v.id)
       }
       let myToken = localStorage.getItem('my_token');
+      let slug = localStorage.getItem('slug')
       axios({
         method: "PUT",
-        url:  `https://driff.driff.io/api/v2/post-channel-call-ended`,
+        url:  `https://${slug}.driff.online/api/v2/post-channel-call-ended`,
         crossDomain: true,
         data: data,
         headers: {
