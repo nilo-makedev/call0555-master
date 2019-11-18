@@ -72,7 +72,7 @@ export default class App extends React.PureComponent {
       let myToken = localStorage.getItem('my_token');
       axios({
         method: "PUT",
-        url:  `https://admin.drevv.com/api/v2/post-channel-call-ended`,
+        url:  `https://driff.driff.io/api/v2/post-channel-call-ended`,
         crossDomain: true,
         data: data,
         headers: {
