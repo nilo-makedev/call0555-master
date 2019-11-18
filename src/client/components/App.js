@@ -91,12 +91,13 @@ export default class App extends React.PureComponent {
   componentDidMount () {
     let myToken = localStorage.getItem('my_token');
     let accessBroadcastToken = localStorage.getItem('socket_token');
-    let host = 'https://admin.drevv.com';
+    let host = localStorage.getItem('host')
+    //let host = 'https://admin.drevv.com';
     localStorage.setItem('my_token', myToken);
     localStorage.setItem('socket_token', accessBroadcastToken);
     if (!window.io) window.io = require("socket.io-client");
     if (!window.Echo) {
-      if (myToken && accessBroadcastToken){
+      if (myToken && accessBroadcastToken && host){
         window.Echo = new Echo({
           broadcaster: "socket.io",
           host: host,
