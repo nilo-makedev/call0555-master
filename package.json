@@ -56,7 +56,7 @@
     "express": "^4.13.3",
     "laravel-echo": "^1.6.1",
     "prop-types": "^15.5.10",
-    "pug": "^2.0.0-rc.2",
+    "pug": "^3.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
